@@ -5,6 +5,12 @@ const {UserRouter}=require("./routes/user.routes");
 
 const app=express();
 app.use(express.json());
+
+app.get("/",(req,res)=>{
+    res.send(`<h1>Home page Here</h1>`);
+})
+
+
 app.use("/users",UserRouter);
 //app.use
 app.listen(1700,async(req,res)=>{
