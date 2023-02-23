@@ -7,7 +7,7 @@ const app=express();
 app.use(express.json());
 
 app.get("/",(req,res)=>{
-    res.send(`<h1>Home page Here</h1>`);
+    res.send(`<h1>Home page Here is present in the page</h1>`);
 })
 
 
