@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+          <li><a href="./index.html">SignUp page</a></li>
+          <li><a href="./login.html">Login Page</a></li>
+          <li><a href="./createNotes.html">createNotes</a></li>
+          <li><a href="./notes.html">All the Notes</a></li>
+        </ul>
+      </nav>
+    <div id="container">
+        <h1>SignUp Page</h1>
+        <input type="text" id="name" placeholder="Enter your name">
+        <input type="text" id="email" placeholder="Enter your email">
+        <input type="text" id="password" placeholder="Enter your password">
+        <input type="number" name="" id="contact">
+        <button onclick="onSignup()">Sign Up</button>
+        
+    </div>
+</body>
+</html>
+<script>
+const onSignup=()=>{
+    const payload={
+        name:document.getElementById("name").value,
+        email:document.getElementById("email").value,
+        password:document.getElementById("password").value,
+        contact:document.getElementById("contact").value
+    }
+    fetch("https://shy-red-badger-coat.cyclic.app/users/register",{
+        method:"POST",
+        headers:{
+            "content-type":"application/json"
+        },
+        body:JSON.stringify(payload)
+    }).then(res=>res.json())
+    .then(res=>console.log(res))
+    .catch(err=>console.log(err))
+    // console.log(payload)
+}
+
+</script>
