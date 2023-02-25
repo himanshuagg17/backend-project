@@ -2,6 +2,7 @@ const express=require("express");
 
 const {connection} = require("./configs/db");
 const {UserRouter}=require("./routes/user.routes");
+const {productRouter}=require("./routes/products.route");
 const cors=require("cors");
 
 const app=express();
@@ -16,6 +17,8 @@ app.get("/",(req,res)=>{
 
 
 app.use("/users",UserRouter);
+//middleware to add the products.
+app.use("/products", productRouter);
 //app.use
 app.listen(1700,async(req,res)=>{
       try{
