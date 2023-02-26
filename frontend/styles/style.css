@@ -7,6 +7,9 @@
     
 
 }
+.desktop-item{
+    cursor: pointer;
+}
 #navbar{
     position: relative;
     bottom: 50px;

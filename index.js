@@ -1,5 +1,5 @@
 const express=require("express");
-
+const {authenticate}= require("./authenticate");
 const {connection} = require("./configs/db");
 const {UserRouter}=require("./routes/user.routes");
 const {productRouter}=require("./routes/products.route");
@@ -17,6 +17,8 @@ app.get("/",(req,res)=>{
 
 
 app.use("/users",UserRouter);
+
+//app.use(authenticate);
 //middleware to add the products.
 app.use("/products", productRouter);
 //app.use

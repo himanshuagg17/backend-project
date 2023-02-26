@@ -17,7 +17,7 @@ UserRouter.post("/register", async (req, res) => {
         bcrypt.hash(password, 5, async (err, hash) => {
             // Store hash in your password DB.
             if (err) {
-                res.send({ "msg": "New user Unable to  registered", "error": err.message });
+                res.send({ "msg": "New user Unable to  registere", "error": err.message });
             } else {
                 const user = new UserModel({ name, email, password: hash ,contact});
                 await user.save();
